@@ -1,5 +1,5 @@
 #! /bin/bash
-printf "Installing RDP Please Wait 2 Min It's Made by Hassan Ahmed 2021" >&2
+printf "Installing RDP Please Wait 4 or 5 Min It's Made by Hassan Ahmed 2021" >&2
 {
 sudo useradd -m HosRDP
 sudo adduser HosRDP sudo
