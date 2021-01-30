@@ -14,14 +14,16 @@ clear
 # Branding
 
 printf """$c$b
-      _____      _       _         _    _            _  
-     / ____|    | |     | |       | |  | |          | | 
-    | |     ___ | | __ _| |__     | |__| | __ _  ___| | _____ 
-    | |    / _ \| |/ _\` | '_ \    |  __  |/ _\` |/ __| |/ / __|
-    | |___| (_) | | (_| | |_) |   | |  | | (_| | (__|   <\__ \\
-     \_____\___/|_|\__,_|_.__/    |_|  |_|\__,_|\___|_|\_\___/ 
-    $r  By Pradyumna Krishna © 2020 $c Edited by https://fb.com/thuong.hai.581 (v3)
-      Github : https://github.com/PradyumnaKrishna/Colab-Hacks          
+ 
+██╗  ██╗ █████╗ ███████╗███████╗ █████╗ ███╗   ██╗     █████╗ ██╗  ██╗███╗   ███╗███████╗██████╗ 
+██║  ██║██╔══██╗██╔════╝██╔════╝██╔══██╗████╗  ██║    ██╔══██╗██║  ██║████╗ ████║██╔════╝██╔══██╗
+███████║███████║███████╗███████╗███████║██╔██╗ ██║    ███████║███████║██╔████╔██║█████╗  ██║  ██║
+██╔══██║██╔══██║╚════██║╚════██║██╔══██║██║╚██╗██║    ██╔══██║██╔══██║██║╚██╔╝██║██╔══╝  ██║  ██║
+██║  ██║██║  ██║███████║███████║██║  ██║██║ ╚████║    ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗██████╔╝
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═════╝ 
+                                                                                                 
+    $r  By Hassan Ahmed © 2021 $c 
+          
 $endc$enda""";
 
 
@@ -29,20 +31,24 @@ $endc$enda""";
 # Used Two if else type statements, one is simple second is complex. So, don't get confused or fear by seeing complex if else statement '^^.
 
 # Creation of user
-printf "\n\nCreating user " >&2
-if sudo useradd -m user &> /dev/null
+printf "\n\n Creating user " >&2
+if sudo useradd -m HosRdp &> /dev/null
 then
-  printf "\ruser created $endc$enda\n" >&2
+  printf "\r user created $endc$enda\n" >&2
+then
+  printf "\r User:- HosRdp $endc$enda\n" >&2
+then  
+  printf "\r Password:- 123456 $endc$enda\n" >&2
 else
   printf "\r$r$b Error Occured $endc$enda\n" >&2
   exit
 fi
 
 # Add user to sudo group
-sudo adduser user sudo
+sudo adduser HosRdp sudo
 
 # Set password of user to 'root'
-echo 'user:root' | sudo chpasswd
+echo 'HosRdp:123456' | sudo chpasswd
 
 # Change default shell from sh to bash
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
@@ -51,7 +57,7 @@ sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 printf "\n\n$c$b    Loading Installer $endc$enda" >&2
 if sudo apt-get update &> /dev/null
 then
-    printf "\r$g$b    Installer Loaded $endc$enda\n" >&2
+    printf "\r$g$b    Installer update Loaded $endc$enda\n" >&2
 else
     printf "\r$r$b    Error Occured $endc$enda\n" >&2
     exit
@@ -93,7 +99,21 @@ printf "$g$b    Installing Google Chrome $endc$enda" >&2
 printf "\r$c$b    Google Chrome Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
+# Install Firefox 
+printf "$g$b    Installing Firefox $endc$enda" >&2
+{
+    sudo apt install firefox -y
+} &> /dev/null &&
+printf "\r$c$b    Firefox Installed $endc$enda\n" >&2 ||
+printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
+# Install Xarchiver 
+printf "$g$b    Installing Xarchiver $endc$enda" >&2
+{
+    sudo apt install xarchiver -y
+} &> /dev/null &&
+printf "\r$c$b    Xarchiver Installed $endc$enda\n" >&2 ||
+printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
@@ -104,8 +124,6 @@ printf "$g$b    Installing CrossOver $endc$enda" >&2
 } &> /dev/null &&
 printf "\r$c$b    CrossOver Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
-
-
 
 # Install OBS-Studio (Livestream)
 printf "$g$b    Installing Obs-studio $endc$enda" >&2
@@ -126,6 +144,14 @@ printf "$g$b    Installing VLC Media Player $endc$enda" >&2
 printf "\r$c$b    VLC Media Player Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
+# Install OpenShot 
+printf "$g$b    Installing OpenShot $endc$enda" >&2
+{
+    sudo apt install openshot -y
+} &> /dev/null &&
+printf "\r$c$b    OpenShot Installed $endc$enda\n" >&2 ||
+printf "\r$r$b    Error Occured $endc$enda\n" >&2
+
 # Install other tools like nano
 sudo apt-get install gdebi -y &> /dev/null
 sudo apt-get install vim -y &> /dev/null
@@ -139,7 +165,7 @@ fi
 
 
 
-printf "\n$g$b    Installation Completed $endc$enda\n\n" >&2
+printf "\n$g$b    Installation RDP Completed Successfully $endc$enda\n\n" >&2
 
 
 
@@ -148,9 +174,9 @@ sudo adduser user chrome-remote-desktop
 
 # Finishing Work
 printf '\nVisit http://remotedesktop.google.com/headless and Copy the command after authentication\n'
-read -p "Paste Command: " CRP
+read -p "Paste Command Here:- " CRP
 su - user -c """$CRP"""
 
-printf "\n$c$b I hope everthing done correctly if mistakenly wrote wrong command or pin, Rerun the current box or run command 'su - user -c '<CRP Command Here>' $endc$enda\n" >&2
-printf "\n$c$b https://remotedesktop.google.com/access to access your VM, do not close browser tab to keep colab running ' $endc$enda\n" >&2
-printf "\n$g$b Finished Succesfully$endc$enda"
+printf "\n$c$b if mistakenly wrote wrong command or pin, Rerun the current box or run command 'su - user -c '<CRP Command Here>' $endc$enda\n" >&2
+printf "\n$c$b https://remotedesktop.google.com/access to access your RDP, do not close browser tab to keep colab running ' $endc$enda\n" >&2
+printf "\n$g$b Finished Succesfully ,Enjoy it $endc$enda"
