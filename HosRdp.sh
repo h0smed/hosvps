@@ -31,11 +31,13 @@ $endc$enda""";
 # Used Two if else type statements, one is simple second is complex. So, don't get confused or fear by seeing complex if else statement '^^.
 
 # Creation of user
-printf "\n\n Creating user " >&2
+printf "\n\nCreating user " >&2
 if sudo useradd -m HosRdp &> /dev/null
 then
-  printf "\r user created $endc$enda\n" >&2
-then
+  printf "\ruser created $endc$enda\n" >&2
+  printf "\rUsername:- HosRdp $endc$enda\n" >&2
+  printf "\rPassword:- 123456 $endc$enda\n" >&2
+else
   printf "\r$r$b Error Occured $endc$enda\n" >&2
   exit
 fi
