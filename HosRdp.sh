@@ -36,10 +36,6 @@ if sudo useradd -m HosRdp &> /dev/null
 then
   printf "\r user created $endc$enda\n" >&2
 then
-  printf "\r User:- HosRdp $endc$enda\n" >&2
-then  
-  printf "\r Password:- 123456 $endc$enda\n" >&2
-else
   printf "\r$r$b Error Occured $endc$enda\n" >&2
   exit
 fi
