@@ -80,6 +80,8 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
         apt install --assume-yes xfce4 desktop-base
     sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
+    sudo apt install xfce4-terminal
+    sudo update-alternatives --config x-terminal-emulator
     sudo systemctl disable lightdm.service
 } &> /dev/null &&
 printf "\r$c$b    Desktop Environment Installed $endc$enda\n" >&2 ||
