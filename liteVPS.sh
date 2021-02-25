@@ -80,6 +80,8 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
         apt install --assume-yes xfce4 desktop-base
     sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
+    sudo apt install xfce4-terminal
+    sudo update-alternatives --config x-terminal-emulator
     sudo systemctl disable lightdm.service
 } &> /dev/null &&
 printf "\r$c$b    Desktop Environment Installed $endc$enda\n" >&2 ||
@@ -117,12 +119,13 @@ printf "$g$b    Installing VLC Media Player $endc$enda" >&2
 printf "\r$c$b    VLC Media Player Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
-# Install OpenShot 
-printf "$g$b    Installing OpenShot $endc$enda" >&2
+# Install OpenShot & Kdenlive
+printf "$g$b    Installing OpenShot & Kdenlive $endc$enda" >&2
 {
     sudo apt install openshot -y
+    sudo apt install kdenlive -y
 } &> /dev/null &&
-printf "\r$c$b    OpenShot Installed $endc$enda\n" >&2 ||
+printf "\r$c$b    OpenShot & Kdenlive Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 
