@@ -88,7 +88,6 @@ printf "\r$c$b    Desktop Environment Installed $endc$enda\n" >&2 ||
 { printf "\r$r$b    Error Occured $endc$enda\n" >&2; exit; }
 
 
-
 # Install Google Chrome
 printf "$g$b    Installing Google Chrome $endc$enda" >&2
 {
