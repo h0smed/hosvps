@@ -78,10 +78,11 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
     sudo DEBIAN_FRONTEND=noninteractive \
         apt install --assume-yes cinnamon-core desktop-base
-        apt install --assume-yes task-cinnamon-desktop
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/cinnamon-session-cinnamon2d" > /etc/chrome-remote-desktop-session'  
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/cinnamon-session" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo systemctl disable lightdm.service
+    sudo apt install --assume-yes task-cinnamon-desktop
+
 } &> /dev/null &&
 printf "\r$c$b    Desktop Environment Installed $endc$enda\n" >&2 ||
 { printf "\r$r$b    Error Occured $endc$enda\n" >&2; exit; }
