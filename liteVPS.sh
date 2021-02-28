@@ -120,7 +120,9 @@ printf "\r$r$b    Error Occured $endc$enda\n" >&2
 # Install OpenShot & Kdenlive
 printf "$g$b    Installing OpenShot & Kdenlive $endc$enda" >&2
 {
-    sudo apt install openshot -y
+    sudo add-apt-repository ppa:openshot.developers/ppa
+    sudo apt-get update
+    sudo apt-get install openshot-qt
     sudo apt install kdenlive -y
 } &> /dev/null &&
 printf "\r$c$b    OpenShot & Kdenlive Installed $endc$enda\n" >&2 ||
