@@ -73,7 +73,7 @@ printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 
 
 
-# Install Desktop Environment (cinnamon)
+# Install Desktop Environment (cinnamon
 printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
        sudo DEBIAN_FRONTEND=noninteractive \
