@@ -78,6 +78,7 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
        sudo DEBIAN_FRONTEND=noninteractive \
         apt install --assume-yes lubuntu-desktop
+        apt install lxde
     sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/lxsession" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo apt install xfce4-terminal
