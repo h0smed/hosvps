@@ -77,9 +77,10 @@ printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
        sudo DEBIAN_FRONTEND=noninteractive \
-        apt install --assume-yes lubuntu-desktop
+        apt install --assume-yes kali-tools-top10
+        apt install kali-desktop-xfce
         apt install lxde
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/lxsession" > /etc/chrome-remote-desktop-session'  
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/startlxde" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo apt install xfce4-terminal
     sudo systemctl disable lightdm.service
