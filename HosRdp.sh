@@ -67,6 +67,7 @@ printf "\n$g$b    Installing Chrome Remote Desktop $endc$enda" >&2
     wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
     sudo dpkg --install chrome-remote-desktop_current_amd64.deb
     sudo apt install --assume-yes --fix-broken
+    sudo apt-get install -y xfce4-terminal
 } &> /dev/null &&
 printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 { printf "\r$r$b    Error Occured $endc$enda\n" >&2; exit; }
