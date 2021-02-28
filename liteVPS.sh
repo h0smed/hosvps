@@ -78,7 +78,7 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
        sudo DEBIAN_FRONTEND=noninteractive \
         apt install --assume-yes lubuntu-desktop
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/lubuntu-session" > /etc/chrome-remote-desktop-session'  
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/lxsession" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo apt install xfce4-terminal
     sudo systemctl disable lightdm.service
@@ -117,17 +117,6 @@ printf "$g$b    Installing VLC Media Player $endc$enda" >&2
 } &> /dev/null &&
 printf "\r$c$b    VLC Media Player Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
-
-# Install OpenShot & Kdenlive
-printf "$g$b    Installing OpenShot $endc$enda" >&2
-{
-    sudo apt install openshot-qt
-    sudo apt install kdenlive
-} &> /dev/null &&
-printf "\r$c$b    OpenShot Installed $endc$enda\n" >&2 ||
-printf "\r$r$b    Error Occured $endc$enda\n" >&2
-
-
 
 
 printf "\n$g$b    Installation RDP Completed Successfully $endc$enda\n\n" >&2
