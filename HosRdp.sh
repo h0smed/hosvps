@@ -144,29 +144,16 @@ printf "\r$c$b    VLC Media Player Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 # Install OpenShot 
-printf "$g$b    Installing OpenShot $endc$enda" >&2
+printf "$g$b    Installing OpenShot Kdenlive $endc$enda" >&2
 {
-    sudo apt install openshot -y
+    sudo add-apt-repository ppa:openshot.developers/ppa
+    sudo apt-get update
+    sudo apt-get install openshot-qt
+    sudo apt install kdenlive -y
 } &> /dev/null &&
-printf "\r$c$b    OpenShot Installed $endc$enda\n" >&2 ||
+printf "\r$c$b    OpenShot Kdenlive Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
-# Install Wine
-printf "$g$b    Installing Wine $endc$enda" >&2
-{
-    sudo dpkg --add-architecture i386
-    sudo wget -nc https://dl.winehq.org/wine-builds/winehq.key
-    sudo apt-key add winehq.key
-    sudo apt update
-    sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-    sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-    sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
-    sudo apt update
-    sudo apt install --install-recommends winehq-stable
-    
-} &> /dev/null &&
-printf "\r$c$b    Wine Installed $endc$enda\n" >&2 ||
-printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 # Install other tools like nano
 sudo apt-get install gdebi -y &> /dev/null
