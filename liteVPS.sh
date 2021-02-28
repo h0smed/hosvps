@@ -80,7 +80,7 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
         apt install --assume-yes kali-tools-top10
         apt install kali-desktop-xfce
         apt install lxde
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/mate-session" > /etc/chrome-remote-desktop-session'  
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/startlxqt" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo apt install xfce4-terminal
     sudo systemctl disable lightdm.service
