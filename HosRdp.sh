@@ -117,8 +117,8 @@ printf "\r$r$b    Error Occured $endc$enda\n" >&2
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
 {
-    wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.4-1.deb
-    sudo dpkg -i crossover_20.0.4-1.deb
+    wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.2-1.deb
+    sudo dpkg -i crossover_20.0.2-1.deb
     sudo apt install --assume-yes --fix-broken
 } &> /dev/null &&
 printf "\r$c$b    CrossOver Installed $endc$enda\n" >&2 ||
