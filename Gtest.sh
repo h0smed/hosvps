@@ -77,9 +77,8 @@ printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
 sudo DEBIAN_FRONTEND=noninteractive \
-apt install --assume-yes ubuntu-gnome-desktop
-sudo add-apt-repository ppa:gnome3-team/gnome3
-sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/gnome-session" > /etc/chrome-remote-desktop-session'  
+sudo apt-get install mate-desktop-environment
+sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/mate-session" > /etc/chrome-remote-desktop-session'  
 sudo apt install --assume-yes xscreensaver
     sudo apt install xfce4-terminal
     sudo systemctl disable lightdm.service
